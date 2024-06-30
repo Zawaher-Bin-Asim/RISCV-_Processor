@@ -1,0 +1,26 @@
+88000593  //addi x11, x0, -1920   
+08800613  //addi x12, x0, 136
+05400693  //addi x13, x0, 0x54
+30459073  //csrrw x0, mie, x11
+30061073  //csrrw x0, mstatus, x12
+30569073  //csrrw x0, mtvec, x13
+80000137  //lui x2, -524288  //lui x2, 0x80000
+0aa00193  //addi x3, x0, 170 (input data for uart_tx )
+01000213  //addi x4,x0,16    (Baud_rate value)
+00100293  //addi x5, x0, 1   (transmission enable signal)
+00000313  //addi x6, x0, 0    (no. of stop bit) 
+00100393 //addi x7, x0, 1    (interrupt enable)
+00412223  //sw x4, 4(x2)
+00612423  //sw x6, 8(x2)
+00712823  //sw x7, 0x10(x2)
+00312023  //sw x3, 0(x2)
+00512423  //sw x5, 8(x2)
+00170713
+00000013
+00000013
+00000013
+30401073
+fff00113
+0021c1b3
+30459073
+30200073
